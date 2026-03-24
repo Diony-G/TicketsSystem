@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using TicketsSystem.Data;
+using TicketsSystem.Domain.Interfaces;
+using TicketsSystem.Infrastructure.Repositories;
+using TicketsSystem.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,8 +17,11 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.Converters.Add(
             new System.Text.Json.Serialization.JsonStringEnumConverter());
     });
-builder.Services.AddDbContext<TicketsSystemDBContext>(options => 
-options.UseSqlServer(builder.Configuration.GetConnectionString("TicketsSystemConnection")));
+
+builder.Services.AddDbContext<TicketsSystemDBContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("TicketsSystemConnection")));
+
+builder.Services.AddScoped<ITicketRepository, TicketRepository>();
 
 var app = builder.Build();
 

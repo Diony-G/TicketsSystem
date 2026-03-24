@@ -1,4 +1,4 @@
-﻿using SistemTicket.Models.Enums;
+﻿using SistemTicket.Domain.Enums;
 
 namespace TicketsSystem.Models.Dtos
 {

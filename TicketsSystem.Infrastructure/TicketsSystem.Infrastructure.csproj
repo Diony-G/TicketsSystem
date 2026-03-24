@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TicketsSystem.Domain\TicketsSystem.Domain.csproj" />
+    <ProjectReference Include="..\TicketsSystem.Persistence\TicketsSystem.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>

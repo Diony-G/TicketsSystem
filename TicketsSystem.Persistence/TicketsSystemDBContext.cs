@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TicketsSystem.Domain.Entities;
 
-namespace TicketsSystem.Data
+
+namespace TicketsSystem.Persistence
 {
     public class TicketsSystemDBContext : DbContext
     {
@@ -13,3 +14,4 @@ namespace TicketsSystem.Data
         public DbSet<Ticket> Tickets { get; set; }
     }
 }
+
